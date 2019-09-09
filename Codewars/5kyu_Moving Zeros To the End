@@ -1,0 +1,20 @@
+def move_zeros(array):
+    # [array.append(array.pop(i)) for i, v in enumerate(array) if v==0])
+    # return array
+    z=0
+    temp=[]
+    for v in array :
+        print(i, ",", v)
+        if v is bool():
+            continue
+        elif int(v) == z :
+            array.pop(i)
+            array.append(z)
+            i-=1
+            print("T")
+        print(array)
+    return array
+    #your code here
+#print(move_zeros([1,2,0,1,0,1,0,3,0,1]))
+#print(move_zeros([0,1,None,2,False,1,0]))
+print(move_zeros([9,0.0,0,9,1,2,0,1,0,1,0.0,3,0,1,9,0,0,0,0,9]))
