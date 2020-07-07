@@ -75,4 +75,20 @@ class Solution:
         return answer
         
         
+'''
+studying this solution 
+'''
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        result=[]
+        queue=[root]
         
+        if not root:
+            return []
+        while queue:
+            # print("queue: ", queue)
+            result.append([node.val for node in queue if node])
+            # queue=collections.deque()
+            # queue.append(node.left for node in queue)
+            # queue.append(node.right for node in queue)
+            queue=[child for node in queue for child in (node.left, node.right) if child]
