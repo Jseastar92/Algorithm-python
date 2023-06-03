@@ -2,25 +2,14 @@ from typing import List
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
          # brute force
+        min, max_profit = prices[0], 0
         
-        lenthOfPrices = len(prices)
-        i = 0
-        min, max_profit = 0, 0
-        min = prices[i]
-        while lenthOfPrices > i:
-            if i == 0:
-                i+=1
-                continue
-
-            if min < prices[i] : 
-                compareV = prices[i] - min
-                if max_profit < compareV :
-                    max_profit = compareV
-            else :
-                min = prices[i]
-            i+=1
-            
-        return max_profit if max_profit > 0 else 0
+        for price in prices[1:]:
+            if min > price :
+                min = price
+            elif max_profit < price - min :
+                max_profit = price - min
+        return max_profit
 
 sol = Solution()
 
