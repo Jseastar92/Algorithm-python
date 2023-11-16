@@ -16,18 +16,18 @@ class Solution:
         return slow
 
 # 첫번째 풀이. 
-# dfs, loop 이용해서.. O(n)
+# loop 이용해서.. O(n)
 # Two porinter 로 풀어볼것 .
 # def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-#         depth = self.dfs(0, head)
+#         depth = self.getDepth(0, head)
 #         target_index = depth//2
 #         while target_index > 0:
 #             target_index -= 1
 #             head = head.next
 #         return head
 
-# def dfs(self, depth, node: Optional[ListNode]):
+# def getDepth(self, depth, node: Optional[ListNode]):
 #     depth+=1
 #     if not node.next:
 #         return depth
-#     return self.dfs(depth, node.next)
+#     return self.getDepth(depth, node.next)
